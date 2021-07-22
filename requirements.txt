@@ -5,3 +5,5 @@ flask-moment
 flask-sqlalchemy
 flask-migrate
 flask-mail
+flask-login
+email-validator
