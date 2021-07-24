@@ -1,0 +1,11 @@
+<b></b>Dear {{ user.username }},</b>
+<br>
+<p>Welcome to Flasky!</p>
+
+<p> confirm your account please click on the following link:</p>
+
+<a  href="{{ url_for('auth.confirm', token=token, _external=True)}}">Confirmation Link </a>
+
+<p>Sincerely,</p>
+<p>The Flasky Team</p>
+<b>Note: replies to this email address are not monitored.</b>
