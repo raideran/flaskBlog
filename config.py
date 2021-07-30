@@ -2,6 +2,14 @@ import os
 basedir =  os.path.abspath(os.path.dirname(__file__))
 
 
+def setup_db_uri(db_server, data_base):
+        username = os.environ.get('SQL_USERNAME')
+        password = os.environ.get('SQL_PASSWORD')
+        db_server = os.environ.get(db_server)
+        url = f'mysql+pymysql://{username}:{password}@{db_server}/{data_base}'
+        print(url)
+        return url                 
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.googlemail.com')
@@ -20,8 +28,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-    'sqlite:///' + os.path.join(basedir, 'flaskblog_test.sqlite')
+    SQLALCHEMY_DATABASE_URI = setup_db_uri('DEV_DATABASE_URL', 'flaskblog_test')
 
 class TestingConfig(Config):
     TESTING = True
@@ -29,9 +36,8 @@ class TestingConfig(Config):
     'sqlite://'
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-    'sqlite:///' + os.path.join(basedir, 'flaskblog.sqlite')
-
+    SQLALCHEMY_DATABASE_URI = setup_db_uri('DATABASE_URL', 'raideran_flaskblog')
+ 
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,

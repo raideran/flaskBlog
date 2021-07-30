@@ -7,3 +7,5 @@ flask-migrate
 flask-mail
 flask-login
 email-validator
+pymysql
+SQLAlchemy<1.4
