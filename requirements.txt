@@ -9,3 +9,5 @@ flask-login
 email-validator
 pymysql
 SQLAlchemy<1.4
+faker
+cryptography
