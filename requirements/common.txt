@@ -1,0 +1,15 @@
+flask
+flask-wtf
+flask-bootstrap
+flask-moment
+flask-sqlalchemy
+flask-migrate
+flask-mail
+flask-login
+email-validator
+pymysql
+SQLAlchemy<1.4
+cryptography
+flask-pagedown
+markdown
+bleach
