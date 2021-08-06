@@ -8,3 +8,7 @@ Flask db init -> Create migrations folder
 flask db migrate -> creates the migration scripts
 
 flask db upgrade -m "Comment" -> applies the migrations script to the DB
+
+Page 182
+
+Example 12b
