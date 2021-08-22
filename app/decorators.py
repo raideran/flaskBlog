@@ -12,6 +12,7 @@ def permission_required(permission):
             return func(*args, **kwargs)
         return decorated_function
     return decorator
+    
 
 def admin_required(f):
     return permission_required(Permission.ADMIN)(f)

@@ -13,3 +13,4 @@ cryptography
 flask-pagedown
 markdown
 bleach
+Flask-HTTPAuth==3.2.3
